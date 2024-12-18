@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Broadcast</title>
+    <style>
+        body {
+            background-color: #fafafa;
+            font-family: "Open Sans", sans-serif;
+            color: #444;
+            transition: all 0.3s ease-in-out;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #34495e;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        #status-message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .success {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .error {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        #news-updates {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .news-item h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .news-item p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit News Update</h1>
+        <form id="news-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="news">News:</label>
+            <textarea id="news" name="news" required></textarea><br><br>
+
+            <button type="button" id="send-button">Send</button>
+        </form>
+
+        <div id="status-message"></div>
+
+        <div id="news-updates">
+            <h2>Latest News</h2>
+            <div id="news-list"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Toghrul Mirzayev</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
